@@ -1,6 +1,6 @@
 # Waohire Blogs
 
-A blog platform built with Remix and Supabase.
+A blog platform built with Remix.
 
 ## Prerequisites
 
