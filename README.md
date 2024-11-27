@@ -6,21 +6,44 @@
 
 Run the dev server:
 
-```shellscript
+```shell
 npm run dev
 ```
+
+## Database Setup
+
+To run the database, follow these steps:
+
+1. Ensure you have Docker installed on your machine.
+2. Start the database container using Docker Compose:
+
+   ```shell
+   docker-compose up -d
+   ```
+
+3. Apply any pending migrations:
+
+   ```shell
+   npm run migrate
+   ```
+
+4. Seed the database with initial data (if applicable):
+
+   ```shell
+   npm run seed
+   ```
 
 ## Deployment
 
 First, build your app for production:
 
-```sh
+```shell
 npm run build
 ```
 
 Then run the app in production mode:
 
-```sh
+```shell
 npm start
 ```
 
@@ -37,4 +60,4 @@ Make sure to deploy the output of `npm run build`
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer. See the [Vite docs on CSS](https://vitejs.dev/guide/features.html#css) for more information.
