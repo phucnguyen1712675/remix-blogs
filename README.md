@@ -1,63 +1,68 @@
-# Welcome to Remix!
+# Waohire Blogs
 
-- 📖 [Remix docs](https://remix.run/docs)
+A blog platform built with Remix and Supabase.
 
-## Development
+## Prerequisites
 
-Run the dev server:
+Before you begin, ensure you have installed:
+- Node.js (v18 or higher)
+- npm (comes with Node.js)
 
-```shell
-npm run dev
-```
+## Local Development Setup
 
-## Database Setup
-
-To run the database, follow these steps:
-
-1. Ensure you have Docker installed on your machine.
-2. Start the database container using Docker Compose:
-
-   ```shell
-   docker-compose up -d
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd waohire_blogs
    ```
 
-3. Apply any pending migrations:
-
-   ```shell
-   npm run migrate
+2. **Install dependencies**
+   ```bash
+   npm install
    ```
 
-4. Seed the database with initial data (if applicable):
+3. **Database setup**
+   The project uses SQLite by default, which requires no additional configuration.
 
-   ```shell
-   npm run seed
+4. **Initialize Prisma**
+   ```bash
+   # Generate Prisma Client
+   npx prisma generate
+
+   # Run migrations
+   npx prisma migrate dev
+
+   # (Optional) Seed the database
+   npx prisma db seed
    ```
 
-## Deployment
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173`
 
-First, build your app for production:
+## Database Schema
 
-```shell
-npm run build
-```
+The project uses Prisma as the ORM. The schema is defined in `prisma/schema.prisma`. After making any changes to the schema:
 
-Then run the app in production mode:
+1. Create a migration:
+   ```bash
+   npx prisma migrate dev --name <migration-name>
+   ```
 
-```shell
-npm start
-```
+2. Update Prisma Client:
+   ```bash
+   npx prisma generate
+   ```
 
-Now you'll need to pick a host to deploy it to.
+## Available Scripts
 
-### DIY
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run typecheck` - Run TypeScript checks
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer. See the [Vite docs on CSS](https://vitejs.dev/guide/features.html#css) for more information.
+## Project Structure
